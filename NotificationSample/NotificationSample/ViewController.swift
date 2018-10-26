@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             // エラー処理
-            print(error!)
+            //print(error!)
         }
 
         // 通知内容の設定
@@ -29,9 +29,9 @@ class ViewController: UIViewController {
 
         // 日時指定でトリガーを作成
         var fireDate = DateComponents()
-        fireDate.hour = 20
-        fireDate.minute = 15
-        fireDate.second = 30
+        fireDate.hour = 19
+        fireDate.minute = 4
+        fireDate.second = 0
         let trigger = UNCalendarNotificationTrigger(dateMatching: fireDate, repeats: false)
 
         // 通知リクエストを作成
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
 
         // 通知を登録
         center.add(request) { (error) in
-            print(error!)
+            //print(error!)
         }
 
     }
